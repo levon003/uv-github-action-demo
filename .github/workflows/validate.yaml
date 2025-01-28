@@ -15,6 +15,7 @@ jobs:
 
       - name: Fetch main
         run: |
+          git fetch origin main
           git diff --name-only main $GITHUB_SHA
 
       - name: Install uv
