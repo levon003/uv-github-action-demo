@@ -5,7 +5,7 @@ logger = logging.getLogger(__name__)
 
 
 def get_diff_files(
-    source_branch: str, target_branch: str = "main"
+    source_branch: str, target_branch: str = "origin/main"
 ) -> tuple[set[str], set[str], set[str]]:
     try:
         result = subprocess.run(
