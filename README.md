@@ -14,10 +14,11 @@ Here's what the Action does:
  - Fail the GitHub Action if 20+ files were changed.
 
 This is a very unreasonable thing to do, but it demonstrates multiple things:
- - 
+ - A GitHub Action that uses git to identify and process added, changed, and deleted paths relative to `main`, which is more finicky than it looks
+ - A simple Python package structure that works with UV
+ - A multi-stage GitHub Action that installs UV and needed dependencies to execute a validation script
 
-
-Here's a sample GitHub Action when validation succeeds:
+Here's a sample GitHub Action log when validation succeeds:
 
 ```
 2025-01-28 04:03:19,215 - INFO - Validating relative to branch 'main'.
@@ -25,7 +26,13 @@ Here's a sample GitHub Action when validation succeeds:
 2025-01-28 04:03:19,217 - INFO - Validation succeeded.
 ```
 
-Here's a sample GitHub Action when validation fails:
+Here's a sample GitHub Action log when validation fails:
+
+```
+2025-01-28 04:14:09,364 - INFO - Validating relative to branch 'bad-pr'.
+2025-01-28 04:14:09,366 - INFO - Identified 20 git file changes.
+2025-01-28 04:14:09,366 - ERROR - 20 files have changed, which is more than should be touched in a single change!
+```
 
 ### Local usage
 
