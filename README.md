@@ -16,6 +16,17 @@ Here's what the Action does:
 This is a very unreasonable thing to do, but it demonstrates multiple things:
  - 
 
+
+Here's a sample GitHub Action when validation succeeds:
+
+```
+2025-01-28 04:03:19,215 - INFO - Validating relative to branch 'main'.
+2025-01-28 04:03:19,217 - INFO - Identified 2 git file changes.
+2025-01-28 04:03:19,217 - INFO - Validation succeeded.
+```
+
+Here's a sample GitHub Action when validation fails:
+
 ### Local usage
 
 #### Initial setup
