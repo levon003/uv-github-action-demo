@@ -10,10 +10,12 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Fetch main
         run: |
-          git fetch origin main && git diff --name-only main $GITHUB_SHA
+          git diff --name-only main $GITHUB_SHA
 
       - name: Install uv
         uses: astral-sh/setup-uv@v5
